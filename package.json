@@ -14,9 +14,6 @@
     "type": "git",
     "url": "git+https://github.com/Nileshdcool/elevar-common.git"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "devDependencies": {
     "@types/jest": "^29.5.14",
     "jest": "^29.7.0",
