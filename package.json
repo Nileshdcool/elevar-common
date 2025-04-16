@@ -10,9 +10,6 @@
     "publish:prod": "npm publish --access restricted",
     "publish:dev": "npm publish --access public"
   },
-  "publishConfig": {
-  "registry": "http://localhost:4873"
-},
   "devDependencies": {
     "@types/jest": "^29.5.14",
     "jest": "^29.7.0",

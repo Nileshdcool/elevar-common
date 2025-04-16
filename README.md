@@ -10,9 +10,19 @@
 
 ## Installation
 
-To include `elevar-common` in your project, use the following command:
+To include `elevar-common` in your project, first ensure that your npm registry is correctly set up. Run the following commands:
 
 ```bash
+npm set registry http://localhost:4873
+npm adduser --registry http://localhost:4873/
+npm publish --registry http://localhost:4873/
+npm install @elevar/common --registry=http://localhost:4873
+```
+
+If you are using a private registry, configure it as follows:
+
+```bash
+npm set registry https://your-private-registry-url/
 npm install elevar-common
 ```
 
