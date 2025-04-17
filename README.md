@@ -15,6 +15,7 @@ To include `elevar-common` in your project, first ensure that your npm registry 
 ```bash
 npm set registry http://localhost:4873
 npm adduser --registry http://localhost:4873/
+npm login --registry http://localhost:4873/
 npm publish --registry http://localhost:4873/
 npm install @elevar/common --registry=http://localhost:4873
 ```

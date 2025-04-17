@@ -9,6 +9,7 @@ export interface StrapiUser {
   documentId: string;
   publishedAt: string;
   updatedAt: string;
+  photoURL?: string | null;
 }
 
 export interface IEducation {
