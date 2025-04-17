@@ -1,24 +1,7 @@
-export interface StrapiUser {
-  email: string | null;
-  id: string | null;
-  provider: string | null;
-  username: string | null;
-  blocked: boolean;
-  confirmed: boolean;
-  createdAt: string;
-  documentId: string;
-  publishedAt: string;
-  updatedAt: string;
-  photoURL?: string | null;
-}
-
-export interface IEducation {
-  id?: number;
-  documentId?: string;
-  degree: string;
-  school: string;
-  location: string;
-  from: string;
-  to: string;
-  achievements: string[];
-}
+export * from './billing-history.interface';
+export * from './education.interface';
+export * from './interview.interface';
+export * from './job.interface';
+export * from './seo.interface';
+export * from './user-resume-profile.interface';
+export * from './user.interface';
