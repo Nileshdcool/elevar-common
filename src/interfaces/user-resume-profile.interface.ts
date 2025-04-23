@@ -127,7 +127,8 @@ export interface IAchievement {
     status: string;
     thumbnail: string;
     url: string;
-    userProfile?: number; // Optional in case `user_resume_profile.id` is sometimes missing
+    userProfile?: number; // Optional in case `user_resume_profile.id` is sometimes missing;
+    userResumeProfileId:string;
   }
   
  export interface IJobPortal {
