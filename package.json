@@ -22,8 +22,5 @@
     "jest": "^29.7.0",
     "ts-jest": "^29.3.2",
     "typescript": "^5.8.3"
-  },
-  "dependencies": {
-    "@elevar/common": "^1.0.5"
   }
 }
