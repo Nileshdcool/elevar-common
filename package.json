@@ -1,6 +1,6 @@
 {
-  "name": "@elevar/common",
-  "version": "1.0.10",
+  "name": "@nileshdcool/common",
+  "version": "1.0.0",
   "private": false,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,6 +9,13 @@
     "test": "jest",
     "publish:prod": "npm publish --access restricted",
     "publish:dev": "npm publish --access public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nileshdcool/elevar-common.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",

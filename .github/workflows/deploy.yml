@@ -1,0 +1,36 @@
+name: Deploy Package
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          registry-url: https://npm.pkg.github.com/
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Build the package
+      - name: Build the package
+        run: npm run build
+
+      # Publish the package
+      - name: Publish to GitHub Package Registry
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
