@@ -31,11 +31,16 @@ jobs:
           CURRENT_VERSION=$(node -p "require('./package.json').version")
           IFS='.' read -r MAJOR MINOR PATCH <<< "$CURRENT_VERSION"
 
+          # Increment PATCH version
+          PATCH=$((PATCH + 1))
+
+          # Handle overflow for PATCH
           if [ "$PATCH" -ge 12 ]; then
             PATCH=0
             MINOR=$((MINOR + 1))
           fi
 
+          # Handle overflow for MINOR
           if [ "$MINOR" -ge 12 ]; then
             MINOR=0
             MAJOR=$((MAJOR + 1))
