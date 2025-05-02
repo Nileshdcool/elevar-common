@@ -25,14 +25,33 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # Automatically bump version
+      # Automatically bump version with custom logic
       - name: Bump version
         run: |
-          npm version patch --no-git-tag-version
+          CURRENT_VERSION=$(node -p "require('./package.json').version")
+          IFS='.' read -r MAJOR MINOR PATCH <<< "$CURRENT_VERSION"
+
+          if [ "$PATCH" -ge 12 ]; then
+            PATCH=0
+            MINOR=$((MINOR + 1))
+          fi
+
+          if [ "$MINOR" -ge 12 ]; then
+            MINOR=0
+            MAJOR=$((MAJOR + 1))
+          fi
+
+          NEW_VERSION="$MAJOR.$MINOR.$PATCH"
+          echo "New version: $NEW_VERSION"
+
+          # Update package.json with the new version
+          npm version "$NEW_VERSION" --no-git-tag-version
+
+          # Commit the updated package.json
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add package.json
-          git commit -m "chore: bump version to $(node -p "require('./package.json').version")"
+          git commit -m "chore: bump version to $NEW_VERSION"
           git push origin dev
 
       # Build the package
