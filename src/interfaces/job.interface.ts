@@ -23,6 +23,7 @@ export interface IJobApplication {
     platform: string;
     totalJobs: number;
     link: string;
+    sessionId:string;
   }
   
   export interface IJobApplicationSummary {
@@ -77,4 +78,82 @@ export interface IJobApplication {
   export interface Skill {
     skill: string;
     years: string;
+  }
+
+
+  export interface IUserUpload {
+    UserId: number;
+    UserEmail: string | null | undefined;
+    FileId: number;
+    IsActive: boolean;
+    user_resume_profile: any;
+    FileName:string;
+  }
+  
+  export interface JobListingFilters {
+    email:       string;
+    CompanyName?:string;
+    JobTitle?:   string;
+    Resume?:     string;
+    fromDate?:   string; // YYYY-MM-DD
+    toDate?:     string; // YYYY-MM-DD
+    sessionId?: string;
+    portalname?: string;
+  }
+  
+  export interface JobListing {
+    company: string;
+    title:   string;
+    resume:  string;
+    date:    string; // YYYY-MM-DD
+    link:    string;
+  }
+  
+  export interface JobApplicationSummary {
+    id:               number;
+    totalApplied:     number;
+    jobPlatform:      string;
+    userEmail:        string;
+    resume:           string;
+    applicationCount: number;
+    skills:           string[];
+    link:             string;
+  }
+  
+  interface FileUserUpload {
+    FileName: string;
+  }
+  
+  export interface IJobPlatform {
+    platform: string;
+    totalJobs: number;
+    link: string;
+    // sessionId:string;
+  }
+  export interface SessionSummary {
+    sessionId:   string;
+    id:               number;
+    totalApplied:     number;
+    jobPlatform:      string;
+    userEmail:        string;
+    resume:           string;
+    applicationCount: number;
+    skills:           string[];
+    link:             string;
+  }
+  
+  interface SkillObj { skill: string }
+  interface PortalObj {name: string; }
+  
+  interface ResumeStatisticsProps {
+    totalApplied: number;
+      jobPlatform: string;    
+      userEmail: string;
+      resume: string;
+      applicationCount: number;
+      skills: string[];
+      link: string;
+      showApplicationDetails: (() => void) | null;
+      colapse: boolean;
+      sessionId:string;
   }
