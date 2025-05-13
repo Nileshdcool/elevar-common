@@ -9,6 +9,7 @@ export interface IJobApplication {
     applicationCount: number;
     skills: string[];
     link: string;
+    sessionId:string;
   }
   
   export interface IJob {
@@ -120,7 +121,7 @@ export interface IJobApplication {
     link:             string;
   }
   
-  interface FileUserUpload {
+ export interface FileUserUpload {
     FileName: string;
   }
   
@@ -142,18 +143,6 @@ export interface IJobApplication {
     link:             string;
   }
   
-  interface SkillObj { skill: string }
-  interface PortalObj {name: string; }
+  export interface SkillObj { skill: string }
+  export interface PortalObj {name: string; }
   
-  interface ResumeStatisticsProps {
-    totalApplied: number;
-      jobPlatform: string;    
-      userEmail: string;
-      resume: string;
-      applicationCount: number;
-      skills: string[];
-      link: string;
-      showApplicationDetails: (() => void) | null;
-      colapse: boolean;
-      sessionId:string;
-  }
