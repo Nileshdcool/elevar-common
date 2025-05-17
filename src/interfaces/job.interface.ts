@@ -146,3 +146,13 @@ export interface IJobApplication {
   export interface SkillObj { skill: string }
   export interface PortalObj {name: string; }
   
+export interface ILoggedInUserBasicDetails {
+  email: string;
+  documentId: string;
+}
+
+export interface FeedbackPayload {
+  SessionId: string;
+  FeebackExprience: string | null;
+  FeebackText: string;
+}
