@@ -32,7 +32,8 @@ export interface Topic {
     answers: Answer[];
     question_level: string;
     readStatus:boolean;
-    statusId:string
+    statusId:string;
+    documentId:string;
     }
   
    export interface HomeProps {

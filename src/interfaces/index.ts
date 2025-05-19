@@ -7,3 +7,4 @@ export * from './user-resume-profile.interface';
 export * from './user.interface';
 export * from './starpi-basic-interface';
 export * from './filters-interfaces';
+export * from './subscription'
