@@ -175,6 +175,7 @@ export interface IResume {
 
 interface IUserResumeProfileDetails {
   id: number;
+  skills:[{skill: string;years: string;}]
 }
 
 // interface Skill {
