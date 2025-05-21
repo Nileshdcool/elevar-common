@@ -20,19 +20,19 @@ export interface IConfigData {
     [key: string]: string;
   }
   
-  export interface ISubscriptionPlan {
-    title: string;
-    originalPrice: number;
-    period: string;
-    discountedPrice: number;
-    description: string[];
-    additionalDescription: string[];
-    isMostPopular?: boolean;
-    type: string;
-    planName:string;
-    priceId:string;
-    discountPriceId: string;
-    stripeId: string;
-    periodId: string;
-  }  
-
+export interface ISubscriptionPlan {
+  title: string;
+  originalPrice: number;
+  discountedPrice: number;
+  period: string;
+  description: string[];
+  additionalDescription: string[];
+  isMostPopular: boolean;
+  type: string;
+  planName?: string;
+  priceId?: string;
+  discountPriceId?: string;
+  stripeId?: string;
+  periodId?: string;
+}
+ 

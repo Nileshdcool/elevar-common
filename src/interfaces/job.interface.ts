@@ -119,6 +119,7 @@ export interface IJobApplication {
     applicationCount: number;
     skills:           string[];
     link:             string;
+    sessionId:string;
   }
   
  export interface FileUserUpload {
