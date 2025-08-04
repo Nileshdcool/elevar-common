@@ -1,7 +1,7 @@
 export type BillingHistoryItem = {
     id: string;
-    subscriptionType: string;
-    startDate: string;
-    endDate: string;
-    paymentStatus: string;
+    SubscriptionType: string;
+    StartDate: string;
+    EndDate: string;
+    PaymentStatus: string;
   };
